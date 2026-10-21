@@ -1,0 +1,19 @@
+# AWS Credentials & Keys
+*.pem
+*.ppk
+credentials
+.aws/
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
