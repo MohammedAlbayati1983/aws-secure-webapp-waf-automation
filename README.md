@@ -35,3 +35,34 @@ A production-grade security architecture for a two-tier web application hosted o
 ├── testing/               # Connectivity & validation tests
 └── infrastructure-as-code/ # (Planned) Terraform implementation# AWS Secure Web App with WAF Automation
 ```
+🛠️ Implementation Summary
+Manual Provisioning: All resources were manually provisioned via the AWS Management Console.
+
+Security Testing: Validated the WAF Rate Limit rule by simulating a DDoS attack (multiple rapid requests), which successfully resulted in a 403 Forbidden block.
+
+Automation Proof of Concept: Confirmed that CloudFront logs are successfully delivered to S3, triggering the Lambda function which processes the logs.
+
+📸 Screenshots
+All implementation screenshots are available in the screenshots/ folder.
+
+📘 Lessons Learned
+Security is layered: NACLs (Subnet) -> Security Groups (Instance) -> WAF (Application).
+
+The ALB should be the only resource exposed to the internet; EC2 instances should only trust the ALB.
+
+Serverless automation (Lambda + S3 Triggers) provides a powerful and cost-effective way to build a Self-Healing Security system (SOAR).
+
+🚀 Future Enhancements
+Infrastructure as Code: Automate the entire infrastructure using Terraform.
+
+Full Automation: Update the Lambda code to actually push the blocked IPs into a WAF IP Set and NACL Deny rules.
+
+Security Hub: Integrate AWS Security Hub for centralized security monitoring.
+
+📄 License
+This project is licensed under the MIT License - see the LICENSE file.
+
+👤 Author
+Mohammed Al-Bayati
+
+GitHub: @MohammedAlbayati1983
