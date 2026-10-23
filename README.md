@@ -43,7 +43,7 @@ Security Testing: Validated the WAF Rate Limit rule by simulating a DDoS attack 
 Automation Proof of Concept: Confirmed that CloudFront logs are successfully delivered to S3, triggering the Lambda function which processes the logs.
 
 📸 Screenshots
-All implementation screenshots are available in the screenshots/ folder.
+All 22 implementation screenshots are available in the screenshots/ folder.
 
 📘 Lessons Learned
 Security is layered: NACLs (Subnet) -> Security Groups (Instance) -> WAF (Application).
